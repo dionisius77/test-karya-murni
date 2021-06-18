@@ -1,0 +1,57 @@
+.App {
+  // text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+
+  $grid__cols: 10;
+  $gutter: 5px;
+  @for $i from 1 through $grid__cols {
+    .col-#{$i} {
+      flex-basis: (100 / ($grid__cols / $i)) * 1%;
+      box-sizing: border-box;
+      padding: $gutter;
+    }
+  }
+}
+
+.colored-box {
+  &[data-color] {
+    background-color: #aaa;
+  }
+  height: 150px;
+  box-sizing: content-box;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  legend,
+  input,
+  button {
+    margin: 5px;
+  }
+  // legend {
+  // }
+}
